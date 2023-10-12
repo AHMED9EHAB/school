@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css.css">
+    <title>My Website</title>
+</head>
+<body>
+    
+<header>
+    <a href="#" class="logo">Ahmad Hamdy</a>
+    <nav class="navigation">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <button id="language-button">Switch to German</button>
+</header>
+
+<section class="main">
+    <div>
+        <h2>Hallo, ich bin Ahmad<br><span>Ich bin Student</span></h2>
+        <h3>Ich möchte der beste Programmierer werden</h3>
+        <a href="#projects" class="main-btn">Meine Arbeit ansehen</a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100058796762915"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+</section>
+
+<section class="cards" id="services">
+    <h2 class="title">Dienstleistungen</h2>
+    <div class="content">
+        <div class="card">
+            <div class="icon">
+                <i class="fas fa-edit"></i>
+            </div>
+            <div class="info">
+                <h3>Skript-Schreiben</h3>
+                <p>Recherchieren und Schreiben von Skripten zu verschiedenen Themen, die direkt für die Videoproduktion aufgezeichnet werden können</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <div class="info">
+                <h3>Videoproduktion</h3>
+                <p>Aufnehmen und Filmen von Videos zu verschiedenen Themen</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="Projects" id="Projects">
+    <h2 class="title">Projekte</h2>
+    <div class="contents">
+        <div class="card">
+            <div class="projects-image">
+                <img src="images/2.jpg" alt="Projektbild">
+            </div>
+            <div class="project-info">
+                <p class="project-category">Sechstagekrieg</p>
+                <strong class="project-title">
+                    <span>Sechstagekrieg</span>
+                    <a href="#"></a>
+                </strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var languageButton = document.getElementById("language-button");
+    var currentLanguage = "en";
+
+    languageButton.addEventListener("click", function() {
+        if (currentLanguage === "en") {
+            document.documentElement.lang = "de";
+            translateToGerman();
+            languageButton.textContent = "Switch to English";
+            currentLanguage = "de";
+        } else {
+            document.documentElement.lang = "en";
+            translateToEnglish();
+            languageButton.textContent = "Switch to German";
+            currentLanguage = "en";
+        }
+    });
+
+    function translateToGerman() {
+        document.querySelector("header .logo").textContent = "Ahmad Hamdy";
+        document.querySelectorAll(".navigation a")[0].textContent = "Dienstleistungen";
+        document.querySelectorAll(".navigation a")[1].textContent = "Projekte";
+        document.querySelectorAll(".navigation a")[2].textContent = "Kontakt";
+        document.querySelector(".main h2").innerHTML = "Hallo, ich bin Ahmad<br><span>Ich bin Student</span>";
+        document.querySelector(".main h3").textContent = "Ich möchte der beste Programmierer werden";
+        document.querySelector(".main .main-btn").textContent = "Meine Arbeit ansehen";
+        document.querySelector(".cards .title").textContent = "Dienstleistungen";
+        document.querySelectorAll(".cards .card .info h3")[0].textContent = "Skript-Schreiben";
+        document.querySelectorAll(".cards .card .info p")[0].textContent = "Recherchieren und Schreiben von Skripten zu verschiedenen Themen, die direkt für die Videoproduktion aufgezeichnet werden können";
+        document.querySelectorAll(".cards .card .info h3")[1].textContent = "Videoproduktion";
+        document.querySelectorAll(".cards .card .info p")[1].textContent = "Aufnehmen und Filmen von Videos zu verschiedenen Themen";
+        document.querySelector(".Projects .title").textContent = "Projekte";
+        document.querySelector(".Projects .card .project-category").textContent = "Sechstagekrieg";
+        document.querySelector(".Projects .card .project-title span").textContent = "Sechstagekrieg";
+    }
+
+    function translateToEnglish() {
+        document.querySelector("header .logo").textContent = "Ahmad Hamdy";
+        document.querySelectorAll(".navigation a")[0].textContent = "Services";
+        document.querySelectorAll(".navigation a")[1].textContent = "Projects";
+        document.querySelectorAll(".navigation a")[2].textContent = "Contact";
+        document.querySelector(".main h2").innerHTML = "Hello, I'm Ahmad<br><span>I am a student</span>";
+        document.querySelector(".main h3").textContent = "I want to be the best programmer";
+        document.querySelector(".main .main-btn").textContent = "View my work";
+        document.querySelector(".cards .title").textContent = "Services";
+        document.querySelectorAll(".cards .card .info h3")[0].textContent = "Script Writing";
+        document.querySelectorAll(".cards .card .info p")[0].textContent = "Research and write scripts for different topics that can then be directly recorded for video production";
+        document.querySelectorAll(".cards .card .info h3")[1].textContent = "Video Production";
+        document.querySelectorAll(".cards .card .info p")[1].textContent = "Record and shoot videos on various topics";
+        document.querySelector(".Projects .title").textContent = "Projects";
+        document.querySelector(".Projects .card .project-category").textContent = "Six October War";
+        document.querySelector(".Projects .card .project-title span").textContent = "Six October War";
+    }
+</script>
+
+</body>
+</html>
